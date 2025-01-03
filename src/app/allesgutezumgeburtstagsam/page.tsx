@@ -375,7 +375,7 @@ export default function AllesGute() {
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerContent>
           <DrawerTitle className="hidden">
-            Alles gute zum Geburtstag
+            Alles Gute zum Geburtstag
           </DrawerTitle>
           <div className="f-col motion-preset-confetti items-center gap-5 p-5">
             <h2 className="text-center text-2xl font-bold">
@@ -383,7 +383,7 @@ export default function AllesGute() {
               dieser Seite! 🎉
             </h2>
             <Image
-              src="/image.png"
+              src="/solana.png"
               className="motion-preset-wobble"
               height={200}
               width={200}
