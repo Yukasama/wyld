@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { Button } from '@/components/ui/button';
+import { Drawer, DrawerContent, DrawerTitle } from '@/components/ui/drawer';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 export default function AllesGute() {
   const [clickCount, setClickCount] = useState(0);
@@ -28,7 +28,7 @@ export default function AllesGute() {
   const [showCups, setShowCups] = useState(false);
   const [hasSurpriseFlowed, setHasSurpriseFlowed] = useState(false);
   const [animateCups, setAnimateCups] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState('');
 
   const [open, setOpen] = useState(false);
 
@@ -41,7 +41,6 @@ export default function AllesGute() {
 
   function handleClickMainButton() {
     if (clickCount < 9) {
-      // Jump to random position
       const maxTop = window.innerHeight - BUTTON_HEIGHT;
       const maxLeft = window.innerWidth - BUTTON_WIDTH;
       const randomTop = Math.floor(Math.random() * maxTop);
@@ -236,9 +235,9 @@ export default function AllesGute() {
 
   function handleGuess() {
     if (attemptNumber < 3) {
-      setErrorMsg("Das ist leider nicht richtig. :(");
+      setErrorMsg('Das ist leider nicht richtig. :(');
       setTimeout(() => {
-        setErrorMsg("");
+        setErrorMsg('');
         setShowCups(false);
         setAttemptNumber((prev) => prev + 1);
         startLoadingForAttempt(attemptNumber + 1);
@@ -284,7 +283,8 @@ export default function AllesGute() {
           style={{
             top: position.top,
             left: position.left,
-          }}>
+          }}
+        >
           Überraschung! 🎉
         </Button>
       )}
@@ -305,7 +305,7 @@ export default function AllesGute() {
                       width: `${-progress}%`,
                     }
                   : {
-                      left: "0%",
+                      left: '0%',
 
                       width: `${progress}%`,
                     }),
@@ -323,7 +323,8 @@ export default function AllesGute() {
           style={{
             top: retryPosition.top,
             left: retryPosition.left,
-          }}>
+          }}
+        >
           Abbrechen
         </Button>
       )}
@@ -335,29 +336,30 @@ export default function AllesGute() {
           </h2>
           <div
             className={cn(
-              "relative h-[120px]",
-              (!hasSurpriseFlowed || animateCups) && "pointer-events-none"
+              'relative h-[120px]',
+              (!hasSurpriseFlowed || animateCups) && 'pointer-events-none',
             )}
-            style={{ width: "375px" }}>
+            style={{ width: '375px' }}
+          >
             <button
               onClick={handleGuess}
               className={cn(
-                "cup1 flex h-24 w-16 cursor-pointer items-end justify-center rounded-md border border-red-500 bg-red-400",
-                animateCups && "cup1-anim"
+                'cup1 flex h-24 w-16 cursor-pointer items-end justify-center rounded-md border border-red-500 bg-red-400',
+                animateCups && 'cup1-anim',
               )}
             />
             <button
               onClick={handleGuess}
               className={cn(
-                "cup2 flex h-24 w-16 cursor-pointer items-end justify-center rounded-md border border-red-500 bg-red-400",
-                animateCups && "cup2-anim"
+                'cup2 flex h-24 w-16 cursor-pointer items-end justify-center rounded-md border border-red-500 bg-red-400',
+                animateCups && 'cup2-anim',
               )}
             />
             <button
               onClick={handleGuess}
               className={cn(
-                "cup3 flex h-24 w-16 cursor-pointer items-end justify-center rounded-md border border-red-500 bg-red-400",
-                animateCups && "cup3-anim"
+                'cup3 flex h-24 w-16 cursor-pointer items-end justify-center rounded-md border border-red-500 bg-red-400',
+                animateCups && 'cup3-anim',
               )}
             />
           </div>
@@ -365,7 +367,7 @@ export default function AllesGute() {
             <Button onClick={handleSurpriseClick}>Her damit!</Button>
           )}
           {errorMsg && (
-            <p className="font-bold text-red-500" style={{ marginTop: "1rem" }}>
+            <p className="font-bold text-red-500" style={{ marginTop: '1rem' }}>
               {errorMsg}
             </p>
           )}
